@@ -1,0 +1,187 @@
+/* reset */
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* root */
+:root {
+  font-size: 62.5%;
+}
+
+/* design */
+body {
+  background-color: black;
+}
+
+.cover {
+  position: relative;
+  background-image: url(./images/cover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vw;
+  z-index: -1;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70%;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vw;
+  justify-content: space-between;
+  padding: 40px;
+  margin-top: -10%;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 50vw;
+  max-width: 60vw;
+}
+
+.movie-title {
+  position: relative;
+  padding: 35px 0 0;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.movie-title::before {
+  content: "NEW";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.3em 0.7em;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+  background-color: orangered;
+  border-bottom: 0.2em solid #cb3701;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  border-radius: 0.3em;
+}
+
+.movie-description {
+  color: #999;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.sidebar {
+  color: white;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.sidebar-contents-title {
+  margin: 40px 0 20px;
+  font-size: 1.8rem;
+}
+
+.genre {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 0 30px 10px 0;
+  font-size: 1.4rem;
+  color: #999;
+}
+
+.genre .genre-item a {
+  padding: 0.1em 0.8em;
+  background-color: #222;
+  border-radius: 0.2em;
+}
+
+.rating {
+  width: 240px;
+  overflow: hidden;
+  background-position: left top;
+}
+
+.rating::before {
+  content: "";
+  display: block;
+  background-position: left bottom;
+}
+
+.rating,
+.rating::before {
+  background-image: url(./images/star.png);
+  background-size: 240px 96px;
+  height: 48px;
+}
+
+.rating_1::before {
+  width: 20%;
+}
+.rating_2::before {
+  width: 40%;
+}
+.rating_3::before {
+  width: 60%;
+}
+.rating_4::before {
+  width: 80%;
+}
+.rating_5::before {
+  width: 100%;
+}
+
+.casts {
+  display: flex;
+}
+
+.casts-cover {
+  width: 60px;
+  border-radius: 50%;
+  border: 4px solid black;
+  margin-left: -10px;
+}
+
+.casts-cover:first-child {
+  margin: 0;
+}
